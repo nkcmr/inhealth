@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  inhealth:
+    build:
+      context: .
+  grafana:
+    build:
+      context: "."
+      dockerfile: "Dockerfile.grafana"
+    volumes:
+      - "./data/grafana:/var/lib/grafana"
+    ports:
+      - "3000:3000"
+  prometheus:
+    build:
+      context: "."
+      dockerfile: "Dockerfile.prometheus"
+    ports:
+      - "9090:9090"

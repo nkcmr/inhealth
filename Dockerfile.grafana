@@ -1,0 +1,3 @@
+FROM grafana/grafana:6.7.2
+COPY ./grafana.ini /etc/grafana/grafana.ini
+
